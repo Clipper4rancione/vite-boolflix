@@ -27,7 +27,7 @@ export default {
         }
       })
       .then( result => {
-        //console.log(result.data.results);
+        console.log(result.data.results);
         store.filmArray = result.data.results;
       })
       .catch( error => {
