@@ -1,8 +1,15 @@
-// Import Bootstrap
+// Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap';
 
-// Import Font Awesome
+// FontSource - alegreya-sans-sc 
+@import "@fontsource/alegreya-sans-sc";
+
+// FontAwesome
 @import 'node_modules/@fortawesome/fontawesome_free/css/all.min.css';
+
+* {
+    font-family: "Alegreya Sans SC", sans-serif;
+}
 
 .container{
     width: 90%;
