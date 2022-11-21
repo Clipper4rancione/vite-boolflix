@@ -1,15 +1,17 @@
 // VARS
 @use './partials/vars' as *;
-
 // Bootstrap
 @import 'node_modules/bootstrap/scss/bootstrap';
-
 // FontSource - alegreya-sans-sc 
 @import "@fontsource/alegreya-sans-sc";
-
 // FontAwesome
 @import 'node_modules/@fortawesome/fontawesome_free/css/all.min.css';
+// Flag-Icons
+@import 'node_modules/flag-icons/css/flag-icons.min.css';
 
+
+
+                    // GENERAL STYLES //
 * {
     font-family: "Alegreya Sans SC", sans-serif;
 }
