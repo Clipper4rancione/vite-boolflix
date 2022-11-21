@@ -1,14 +1,23 @@
 <script>
+
+import AppHeader from './components/AppHeader';
+import AppMain from './components/AppMain';
+
 export default {
-  name: 'App'
+  name: 'App',
+  components:{
+    AppHeader,
+    AppMain
+  }
 }
 </script>
 
 <template>
-  
+  <AppHeader />
+  <AppMain />
 </template>
 
 
-<style>
-
+<style lang="scss">
+  @use '.styles/general'
 </style>
