@@ -1,10 +1,18 @@
 <script>
 
+// Store
+import { store } from './data/store'
+
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'App',
+  data(){
+    return{
+      store
+    }
+  },
   components:{
     AppHeader,
     AppMain
