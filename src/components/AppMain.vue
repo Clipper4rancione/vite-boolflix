@@ -1,22 +1,33 @@
 <script>
+
+import { store } from '../data/store';
+
 export default {
-    name: 'AppMain'
+    name: 'AppMain',
+    data(){
+        return{
+            store,
+        }
+    }
 }
 </script>
 
 <template>
   <div class="container">
     <div class="main-wrapper">
-        <div class="ul">
+        <ul
+            v-for="movie in store.filmArray" 
+            :key="movie.id"
+            >
             <li>
-                film 
+                {{movie.title}} 
                 <ul>
-                    <li>A</li>
-                    <li>B</li>
-                    <li>C</li>
+                    <li>Titolo Originale: {{movie.original_title}}</li>
+                    <li>Lingua Originale: {{movie.original_language}}</li>
+                    <li>Voto: {{movie.vote_average}}</li>
                 </ul>
             </li>
-        </div>
+        </ul>
     </div>
   </div>
 </template>
