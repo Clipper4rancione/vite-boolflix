@@ -1,7 +1,7 @@
 <script>
 
-import AppHeader from './components/AppHeader';
-import AppMain from './components/AppMain';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'App',
@@ -19,5 +19,5 @@ export default {
 
 
 <style lang="scss">
-  @use '.styles/general'
+  @use './styles/general'
 </style>
