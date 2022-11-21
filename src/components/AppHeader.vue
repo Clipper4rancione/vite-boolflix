@@ -9,14 +9,19 @@ export default {
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
-                    <h1>NETFLICS</h1>
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="/public/logo-boolflix.png" alt="">
+                        </div>
+                    </div>
+                    
                 </div>
                 <div class="search-area">
-                    <div class="row">
-                        <div class="col-auto">
+                    <div class="row d-flex">
+                        <div class="col-10">
                             <input type="text" class="form-control" placeholder="Cerca Titoli...">
                         </div>
-                        <div class="col-auto">
+                        <div class="col-2">
                             <div class="button btn btn-danger">
                                 Cerca
                             </div>
@@ -36,12 +41,16 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px;
+        padding: 15px;
 
         .logo {
+            width: 100%;
             display: flex;
-            align-items: center;
-            color: red;
+
+            img {
+                vertical-align: middle;
+                width: 100%;
+            }
         }
     }
 </style>
