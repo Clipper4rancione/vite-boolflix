@@ -1,6 +1,14 @@
 <script>
+import { store } from '../data/store';
+
+
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data(){
+        return{
+            store,
+        }
+    }
 }
 </script>
 
@@ -19,10 +27,15 @@ export default {
                 <div class="search-area">
                     <div class="row d-flex">
                         <div class="col-10">
-                            <input type="text" class="form-control" placeholder="Cerca Titoli...">
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                placeholder="Cerca Titoli..."
+                                v-model="store.textSearch"
+                                >
                         </div>
                         <div class="col-2">
-                            <div class="button btn btn-danger">
+                            <div @click="$emit('startSearch')" class="button btn btn-danger">
                                 Cerca
                             </div>
                         </div>

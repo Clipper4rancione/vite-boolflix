@@ -37,13 +37,13 @@ export default {
     }
   },
   mounted(){
-    this.getMovie();
+    
   }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @startSearch="getMovie()" />
   <AppMain />
 </template>
 
