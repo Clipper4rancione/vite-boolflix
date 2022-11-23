@@ -47,6 +47,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
     header {
         background-color: #0f0f0f;
     }
