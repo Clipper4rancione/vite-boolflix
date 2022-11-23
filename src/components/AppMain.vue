@@ -20,16 +20,27 @@ export default {
 </script>
 
 <template>
-  <div class="container">
-    <div class="main-wrapper">
+  <div class="container mt-5">
         <h2>{{ title }}</h2>
-
-        <MovieCard :card="card" v-for="card in store[type]" :key="card.id"/>
+    <div class="main-wrapper">
+        <div class="row">
+            <div class="col-3 movie-col py-3" v-for="card in store[type]" :key="card.id">
+                <MovieCard :card="card"/>
+            </div>
+        </div>
+        
         
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+h2{
+ color: white;
+}
+.main-wrapper{
+    display: flex;
+    padding: 10px;
+}
 
 </style>
