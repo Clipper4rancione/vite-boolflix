@@ -27,6 +27,7 @@ export default {
             <li>
                 {{movie.title}} 
                 <ul>
+                    <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
                     <li>Titolo Originale: {{movie.original_title || movie.name}}</li>
                     <li>Lingua Originale: 
                         <span v-if="movie.original_language" :class="'fi fi-' + movie.original_language"></span> 
