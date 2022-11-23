@@ -5,7 +5,8 @@ import { store } from '../data/store';
 export default {
     name: 'AppMain',
     props:{
-        title: String
+        title: String,
+        type: String
     },
     data(){
         return{
@@ -20,13 +21,13 @@ export default {
     <div class="main-wrapper">
         <h2>{{ title }}</h2>
         <ul
-            v-for="movie in store.filmArray" 
+            v-for="movie in store[type]" 
             :key="movie.id"
             >
             <li>
                 {{movie.title}} 
                 <ul>
-                    <li>Titolo Originale: {{movie.original_title}}</li>
+                    <li>Titolo Originale: {{movie.original_title || movie.name}}</li>
                     <li>Lingua Originale: 
                         <span v-if="movie.original_language" :class="'fi fi-' + movie.original_language"></span> 
                         <span v-else>{{movie.original_language}}</span> 
