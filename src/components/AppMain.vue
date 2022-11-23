@@ -4,6 +4,9 @@ import { store } from '../data/store';
 
 export default {
     name: 'AppMain',
+    props:{
+        title: String
+    },
     data(){
         return{
             store,
@@ -15,6 +18,7 @@ export default {
 <template>
   <div class="container">
     <div class="main-wrapper">
+        <h2>{{ title }}</h2>
         <ul
             v-for="movie in store.filmArray" 
             :key="movie.id"
@@ -23,7 +27,10 @@ export default {
                 {{movie.title}} 
                 <ul>
                     <li>Titolo Originale: {{movie.original_title}}</li>
-                    <li>Lingua Originale: {{movie.original_language}}</li>
+                    <li>Lingua Originale: 
+                        <span v-if="movie.original_language" :class="'fi fi-' + movie.original_language"></span> 
+                        <span v-else>{{movie.original_language}}</span> 
+                    </li>
                     <li>Voto: {{movie.vote_average}}</li>
                 </ul>
             </li>
