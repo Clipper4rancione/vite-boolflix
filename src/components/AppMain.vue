@@ -1,9 +1,12 @@
 <script>
 
 import { store } from '../data/store';
-
+import MovieCard from './MovieCard.vue';
 export default {
     name: 'AppMain',
+    components:{
+        MovieCard,
+    },
     props:{
         title: String,
         type: String
@@ -20,23 +23,9 @@ export default {
   <div class="container">
     <div class="main-wrapper">
         <h2>{{ title }}</h2>
-        <ul
-            v-for="movie in store[type]" 
-            :key="movie.id"
-            >
-            <li>
-                {{movie.title}} 
-                <ul>
-                    <img :src="'https://image.tmdb.org/t/p/w342/' + movie.poster_path" alt="">
-                    <li>Titolo Originale: {{movie.original_title || movie.name}}</li>
-                    <li>Lingua Originale: 
-                        <span v-if="movie.original_language" :class="'fi fi-' + movie.original_language"></span> 
-                        <span v-else>{{movie.original_language}}</span> 
-                    </li>
-                    <li>Voto: {{movie.vote_average}}</li>
-                </ul>
-            </li>
-        </ul>
+
+        <MovieCard :card="card" v-for="card in store[type]" :key="card.id"/>
+        
     </div>
   </div>
 </template>
