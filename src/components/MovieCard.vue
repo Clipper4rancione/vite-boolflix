@@ -1,8 +1,13 @@
 <script>
+import StarRating from 'vue-star-rating';
+
 export default {
     name: 'MovieCard',
     props:{
         card: Object,
+    },
+    components:{
+        StarRating
     },
     data(){
         return{
@@ -24,9 +29,14 @@ export default {
         </div>
         <div class="card__face card__face--back">
             <ul>
-                <li><h3 class="text-center">{{card.title || card.name}}</h3></li>
-                <li></li>
-                <li></li>
+                <li>Titolo: <br> {{card.title || card.name}}</li>
+                <li>Lingua: <br> {{card.original_lenguage}}</li>
+                <li>Voto: <br> {{Math.ceil(card.vote_average)}} <star-rating 
+                    v-bind:star-size="15" 
+                    v-bind:max-rating="10" 
+                    v-bind:show-rating="false" 
+                    v-bind:read-only="true"/>
+                </li>
             </ul>
         </div>
       </div>
@@ -35,10 +45,13 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-body {
-  font-family: sans-serif;
-}
 
+ul{
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
+
+}
 .scene {
   width: 200px;
   height: 280px;
@@ -59,10 +72,6 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  line-height: 260px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 40px;
   backface-visibility: hidden;
 }
 
@@ -76,7 +85,8 @@ body {
 }
 
 .card__face--back {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.893);
+  color: white;
   transform: rotateY(180deg);
 }
 
