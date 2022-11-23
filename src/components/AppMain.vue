@@ -21,7 +21,7 @@ export default {
 
 <template>
   <div class="container mt-5">
-        <h2>{{ title }}</h2>
+        <h2 class="text-center">{{ title }}</h2>
     <div class="main-wrapper">
         <div class="row d-flex m-auto align-items-center">
             <div class="col-2 movie-col " v-for="card in store[type]" :key="card.id">
@@ -36,6 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 h2{
+font-size: 3rem;
  color: white;
 }
 .main-wrapper{
