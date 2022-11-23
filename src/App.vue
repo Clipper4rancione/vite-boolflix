@@ -23,6 +23,7 @@ export default {
     getMovie(type){
       axios.get(store.apiUrl + type, { params: store.apiParamas})
       .then( result => {
+        store[type] = result.data.results
         console.log(result.data.results);
       })
       .catch( error => {
