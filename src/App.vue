@@ -21,7 +21,7 @@ export default {
   },
   methods:{
     getMovie(type){
-      axios.get(store.apiUrl + type, { params: store.apiParamas})
+      axios.get(store.apiUrl + type, { params: store.apiParams})
       .then( result => {
         store[type] = result.data.results
         console.log(result.data.results);
@@ -30,19 +30,21 @@ export default {
         console.log(error);
       })
     },
+    search(){
+      this.getMovie('movie');
+      this.getMovie('tv');
+    }
   },
   mounted(){
-    this.getMovie('movie')
-    this.getMovie('tv')
+    
   }
 }
 </script>
 
 <template>
-  <AppHeader @startSearch="getMovie()" />
-  <AppMain title="Film"/>
-  <AppMain title="Serie TV"/>
-  <AppMain />
+  <AppHeader @startSearch="search()" />
+  <AppMain v-if="store.movie.length > 0" title="Film" type="movie"/>
+  <AppMain v-if="store.tv.length > 0" title="Serie TV" type="tv"/>
 </template>
 
 
