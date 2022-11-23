@@ -31,7 +31,7 @@ export default {
                                 type="text" 
                                 class="form-control" 
                                 placeholder="Cerca Titoli..."
-                                v-model="store.textSearch"
+                                v-model.trim="store.apiParams.query"
                                 >
                         </div>
                         <div class="col-2">
