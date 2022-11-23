@@ -8,8 +8,8 @@ export const store = reactive({
         query: 'matrix',
         language: 'it-IT'
     },
-    filmArray: [],
-    tvArray: [],
+    movie: [],
+    tv: [],
     textSearch: '',
 
 })
