@@ -25,8 +25,8 @@ export default {
                     
                 </div>
                 <div class="search-area">
-                    <div class="row d-flex">
-                        <div class="col-10">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-9">
                             <input 
                                 type="text" 
                                 class="form-control" 
@@ -34,7 +34,7 @@ export default {
                                 v-model.trim="store.apiParams.query"
                                 >
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <div @click="$emit('startSearch')" class="button btn btn-danger">
                                 Cerca
                             </div>
